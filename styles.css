@@ -1,0 +1,3 @@
+#password:invalid + span::after {
+    content: "Two passwords must be consistent."
+}
