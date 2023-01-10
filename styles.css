@@ -29,6 +29,7 @@
         BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
         'Helvetica Neue', sans-serif;
     --legend-font: "Caviar Bold Italic", "Caviar Italic", var(--label-font);
+    --credit-font: "Caviar Italic", "Caviar Bold Italic", var(--label-font);
     --title-font: var(--legend-font);
     --min-width-image-sidebar: 300px;
 }
@@ -41,6 +42,9 @@ body {
     width: calc(var(--body-width) - 2 * var(--body-padding));
     /* padding: var(--body-padding); */
     /* grid */
+
+    background-color: rgba(31, 66, 148, 0.716);
+
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 1em;
@@ -59,22 +63,29 @@ body {
 
     font-family: var(--title-font);
     font-size: 2em;
+    color: white;
 
     background-image: url(./assets/tobias-tullius-YM6YQMfRzCg-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 
-    /* display: grid;
-    grid-template-rows: repeat(3, 1fr); */
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    position: relative;
 }
 
 .image-container {
+    --image-width: 71.805px;
+    --caption-width: 186.016px;
+    --image-caption-gap: 0.1em;
+    --side-padding: calc((100% - (var(--image-width) + var(--caption-width) + var(--image-caption-gap))) / 2);
+
     display: flex;
     align-items: center;
+    column-gap: var(--image-caption-gap);
 
     padding: 0 50px 0 50px;
 
@@ -82,7 +93,6 @@ body {
 
     background-color: rgb(149, 153, 154, .35);
 
-    --side-padding: calc((100% - (71.805px + 186.016px)) / 2);
     padding: 0 var(--side-padding);
 }
 
@@ -93,6 +103,21 @@ body {
 img {
     height: 3em;
 }
+
+#photo-credit {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    font-size: 0.5em;
+    font-family: var(--credit-font);
+}
+
+#photo-credit > a {
+    color: white;
+    text-decoration: none;
+    font-family: var(--title-font);
+}
+
 
 .form-container {
     display: flex;
