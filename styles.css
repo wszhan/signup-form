@@ -29,6 +29,8 @@
         BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
         'Helvetica Neue', sans-serif;
     --legend-font: "Caviar Bold Italic", "Caviar Italic", var(--label-font);
+    --title-font: var(--legend-font);
+    --min-width-image-sidebar: 300px;
 }
 
 body {
@@ -37,40 +39,82 @@ body {
     --body-padding: 2em;
     height: var(--body-height);
     width: calc(var(--body-width) - 2 * var(--body-padding));
-    padding: var(--body-padding);
+    /* padding: var(--body-padding); */
     /* grid */
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 1em;
     align-items: center;
+
+    margin: 0;
 }
 
 .image-sidebar {
-    --image-sidebar-height: 100%;
-    height: var(--image-sidebar-height);
-    width: calc(--image-sidebar-height* (16/9));
+    /* max-height: 100%;
+    min-height: 500px; */
+    height: var(--body-height);
+    max-width: 100%;
+    min-width: 300px;
+    /* width: calc(height * (16/9)); */
+
+    font-family: var(--title-font);
+    font-size: 2em;
 
     background-image: url(./assets/tobias-tullius-YM6YQMfRzCg-unsplash.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    /* display: grid;
+    grid-template-rows: repeat(3, 1fr); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+
+    padding: 0 50px 0 50px;
+
+    height: 4em;
+
+    background-color: rgb(149, 153, 154, .35);
+
+    --side-padding: calc((100% - (71.805px + 186.016px)) / 2);
+    padding: 0 var(--side-padding);
+}
+
+.image-container > div {
+    white-space: nowrap;
+}
+
+img {
+    height: 3em;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 form {
-    --form-height: 100%;
-    height: calc(var(--form-height) * 0.5);
+    --form-min-width: 400px;
+    /* height: calc(var(--form-max-height) * 0.5); */
     /* height: calc(var(--height) * 10%); */
-    /* height: var(--form-height); */
-
+    height: 100%;
+    min-width: var(--form-min-width);
     font-family: var(--label-font);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    /* grid-template-rows: repeat(6, ); */
+    grid-template-rows: repeat(6, 1fr);
 }
 
-form > legend {
+.form-container > #form-description {
     font-family: var(--legend-font);
     grid-column: 1 / span 2;
 }
