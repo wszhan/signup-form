@@ -21,6 +21,13 @@
         url("fonts/CaviarDreams_Italic_1.woff") format("woff");
 }
 
+@font-face {
+    font-family: "Caviar";
+    src: 
+        url("fonts/CaviarDreams.woff2") format('woff2'),
+        url("fonts/CaviarDreams_1.woff") format('woff');
+}
+
 :root {
     --label-font: 
         "Raleway",
@@ -184,16 +191,24 @@ form label > span {
     color: red;
 }
 
-
-input#first-name:invalid + span::after {
+/* input#first-name:invalid + span::after {
     content: "❌";
-}
+} */
 
 #password + span {
     position: relative;
 }
 
 #password:invalid + span::after {
+    --warning-padding: 2px;
+    --warning-right-offset: 1.5px;
+    font-family: "Caviar", var(--label-font);
     position: absolute;
-    content: "Inconsistent passwords"
+    background-color: rgba(196, 44, 168, 0.601);
+    padding: 2px;
+    color: inherit;
+    white-space: nowrap;
+    content: "Inconsistent passwords";
+    top: -1.95em;
+    right: var(--warning-right-offset);
 }
