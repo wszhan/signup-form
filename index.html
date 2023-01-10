@@ -57,14 +57,16 @@
                 <input
                     type="password" id="password" name="password"
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@\.$!%*?&])[A-Za-z\d@\.$!%*?&]{8,18}$"
+                    oninvalid="this.setCustomValidity('Please enter at least 1 uppercase letter, 1 lower case letter, \n1 special character, 1 number. Enter 8 to 18 characters.')"
+                    oninput="this.setCustomValidity('')"
                     required>
-                    <span></span>
             </div>
             <div>
                 <label for="password-confirmation">CONFIRM PASSWORD <span>*</span></label>
                 <input
                     type="password" id="password-confirmation" name="password-confirmation"
                     required>
+                <span></span>
             </div>
             <div><button>Create Account</button></div>
             <p>

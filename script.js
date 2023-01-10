@@ -12,9 +12,15 @@ function validPasswords() {
     const password2 = passwordInput2.value;
     // console.log(password1 === password2);
     if (password1 !== password2) {
-        passwordInput1.setCustomValidity("Two passwords must match");
-        // passwordInput2.setCustomValidity("Two passwords must match");
+        passwordInput2.setCustomValidity("Two passwords must match");
     } else {
-        passwordInput1.setCustomValidity(""); // make valid
+        passwordInput2.setCustomValidity(""); // make valid
+    }
+
+    const isPassword1Valid = passwordInput1.checkValidity();
+    if (!isPassword1Valid) {
+        passwordInput1.setCustomValidity("hey");
+    } else {
+        passwordInput1.setCustomValidity("");
     }
 }
