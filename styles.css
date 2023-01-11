@@ -217,7 +217,7 @@ form label > span {
     right: var(--warning-right-offset);
 }
 
-form p:last-child > a {
+.form-container p:last-child > a {
     text-decoration: none;
     font-weight: 800;
     font-style: italic;
