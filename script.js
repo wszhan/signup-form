@@ -10,7 +10,7 @@ const passwordInput2 = document.getElementById("password-confirmation");
 function validPasswords() {
     const password1 = passwordInput1.value;
     const password2 = passwordInput2.value;
-    // console.log(password1 === password2);
+
     if (password1 !== password2) {
         passwordInput2.setCustomValidity("Two passwords must match");
     } else {
